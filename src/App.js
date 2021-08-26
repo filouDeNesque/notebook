@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import Header from './components/Header';
 import "./App.css";
-
+// TODO:gerer le css
 
 export default function App() {
   const editorRef = useRef(null);
@@ -11,23 +12,29 @@ export default function App() {
     }
   };
 
-  //create new file or read new file
-  //save content to this file
-  // liste des fichiers enregistrer
+  // TODO:create new file or read new file
+  // TODO:save content to this file
+  // TODO:liste des fichiers enregistrer
 
+
+  /* TODO: Header */
   return (
     <>
+    <Header /> 
+    <div className="App-header">
     <Editor
     onInit={(evt, editor) => editorRef.current = editor}
-    initialValue="<p>This is the initial content of the editor.</p>"
+    initialValue="<h2>Lettre de motivation n°n²</h2>"
     inline
     init={{
-      height: 500,
-	menubar: true,
+      hevight: 500,
+	menubar: false,
+	toolbar_location: 'bottom',
 	content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
     }}
     />
     <button onClick={log}>Log editor content</button>
+    </div>
     </>
   );
 }
