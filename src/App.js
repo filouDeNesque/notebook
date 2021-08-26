@@ -11,12 +11,10 @@ export default function App() {
       console.log(editorRef.current.getContent());
     }
   };
-
-  // TODO:create new file or read new file
-  // TODO:save content to this file
+  // Add api to CRUD with Express
   // TODO:liste des fichiers enregistrer
-
-
+  
+  
   /* TODO: Header */
   return (
     <>
@@ -28,9 +26,9 @@ export default function App() {
     inline
     init={{
       hevight: 500,
-	menubar: false,
-	toolbar_location: 'bottom',
-	content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+      menubar: false,
+      toolbar_location: 'bottom',
+      content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
     }}
     />
     <button onClick={log}>Log editor content</button>
