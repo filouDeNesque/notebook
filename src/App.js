@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
-import { Editor } from '@tinymce/tinymce-react';
-import Header from './components/Header';
+import React, { useRef } from "react";
+import { Editor } from "@tinymce/tinymce-react";
+import Header from "./components/Header";
 import "./App.css";
-// TODO:gerer le css
+// Todo: gerer le css
 
 export default function App() {
   const editorRef = useRef(null);
@@ -11,28 +11,30 @@ export default function App() {
       console.log(editorRef.current.getContent());
     }
   };
-  // Add api to CRUD with Express
-  // TODO:liste des fichiers enregistrer
-  
-  
+
+  // Todo: Add api to CRUD with Firebase
+  // Todo:liste des fichiers enregistrer
+
   /* TODO: Header */
   return (
     <>
-    <Header /> 
-    <div className="App-header">
-    <Editor
-    onInit={(evt, editor) => editorRef.current = editor}
-    initialValue="<h2>Lettre de motivation n°n²</h2>"
-    inline
-    init={{
-      hevight: 500,
-      menubar: false,
-      toolbar_location: 'bottom',
-      content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-    }}
-    />
-    <button onClick={log}>Log editor content</button>
-    </div>
+      <Header />
+      <div className="App-header">
+        <Editor
+          onInit={(evt, editor) => (editorRef.current = editor)}
+          initialValue="<h2>Lettre de motivation n°200²</h2>"
+          inline
+          init={{
+            hevight: 500,
+            menubar: false,
+            toolbar_location: "bottom",
+            content_style:
+              "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+          }}
+        />
+        <button onClick={log}>Log editor content</button>
+        {/* todo: Barre de bouton d'action component */}
+      </div>
     </>
   );
 }
