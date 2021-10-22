@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./Header.css";
 import logo from "../assets/Note-Book.png";
 // TODO:gerer le css
@@ -6,9 +6,9 @@ import logo from "../assets/Note-Book.png";
 export default function Header() {
   return (
     <>
-    <nav class="header">
-    <img class="logo" src={logo} alt="Note-Book"/>
-    </nav>
+      <nav className="header">
+        <img className="logo" src={logo} alt="Note-Book" />
+      </nav>
     </>
   );
 }

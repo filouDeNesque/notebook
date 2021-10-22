@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-:root{
-  --main-bg-color : #2E3440;
+:root {
+  --main-bg-color: #2E3440;
   --main-txt-color: #ECEFF4;
 }
 
-body{
+body {
   background-color: var(--main-bg-color);
   color: var(--main-txt-color);
   font-family: 'Fira Code', monospace;
@@ -13,16 +13,16 @@ body{
 
 
 .App-header {
-  min-height: 100vh;
+  margin: 1em 1em 4em 1em;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
 }
 
 
-.mce-content-body{
-  min-height:80vh;
-  min-width:60%;
+.mce-content-body {
+  min-height: 80vh;
+  min-width: 60%;
+  margin-right: 2em;
 }

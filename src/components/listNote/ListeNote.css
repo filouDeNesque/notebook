@@ -1,0 +1,57 @@
+.ListeNote {
+    border-left: 2px solid;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+}
+
+.ListeNote .card {
+    width: 80px;
+    height: 80px;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 1em;
+}
+
+.ListeNote .card:hover {
+    padding: 7px;
+    border: 1px solid white;
+    color: black;
+    background-color: white;
+    animation: borderAnimation 1s infinite normal;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-top: #00afb9 3px solid;
+        border-right: #d8e2dc 3px solid;
+        border-bottom: transparent 3px solid;
+        border-left: transparent 3px solid;
+    }
+
+    35% {
+        border-top: transparent 3px solid;
+        border-right: #d8e2dc 3px solid;
+        border-bottom: #00afb9 3px solid;
+        border-left: transparent 3px solid;
+
+    }
+
+    70% {
+        border-top: transparent 3px solid;
+        border-right: transparent 3px solid;
+        border-bottom: #d8e2dc 3px solid;
+        border-left: #00afb9 3px solid;
+
+    }
+
+    100% {
+        border-top: #00afb9 3px solid;
+        border-right: transparent 3px solid;
+        border-bottom: transparent 3px solid;
+        border-left: #d8e2dc 3px solid;
+
+    }
+}
