@@ -1,12 +1,10 @@
 import React, { useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
-import Header from "./components/Header";
 import ButtonBar from "./components/buttonBar/ButtonBar";
 import ListeNote from "./components/listNote/ListeNote";
 import "./App.css";
 
 export default function App() {
-  //todo: faire la recuperation via firebase
   let Newnote2 = [
     { id: 14, content: "<h1>Lettre de motivation n°214</h1>" },
     { id: 22, content: "<h1>Yaeh motivation n°222</h1>" },
@@ -14,7 +12,7 @@ export default function App() {
   ];
 
   let Newnote = Newnote2[Newnote2.length - 1];
-  const [noteArray] = useState(Newnote2);
+  const [arrayTest, setArrayTest] = useState(Newnote2);
   const editorRef = useRef(null);
   let [note, setNote] = useState(Newnote);
 
@@ -38,14 +36,19 @@ export default function App() {
     editorRef.current.setContent(event.target.dataset.content);
   };
 
-  // Todo: Add api to CRUD with Firebase
+  const alterArray = ([param]) => {
+    setArrayTest({ param });
+  };
+
+  //Todo:--------------------------------------
   // Todo: Ajout du titre et de la date
   // Todo: Meilleur gestion du css
-  //!!deborde en largeur dans des lignes trop longue Editor
+
+  // !!:----------------------------------------
+  //!!deborde en largeur dans des lignes trop longue Editor (wrap:option)
 
   return (
     <>
-      <Header />
       <div className="App-header">
         <Editor
           onChange={updateNote}
@@ -62,11 +65,14 @@ export default function App() {
             placeholder: Newnote.content,
           }}
         />
-        <ListeNote noteArr={noteArray} changeNote={changeNote} />
+        <ListeNote noteArr={arrayTest} changeNote={changeNote} />
       </div>
-      <ButtonBar log={editorRef} noteId={note.id} newNote={clearNote} />
+      <ButtonBar
+        log={editorRef}
+        noteId={note.id}
+        newNote={clearNote}
+        alterArray={alterArray}
+      />
     </>
   );
 }
-
-//nouveau = nouvelle note
