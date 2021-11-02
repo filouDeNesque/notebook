@@ -71,3 +71,7 @@
 
     }
 }
+
+.ListeNote .card h3{
+    pointer-events: none;
+}
