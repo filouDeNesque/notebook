@@ -33,9 +33,6 @@ export default function App() {
       id: event.target.dataset.id,
       content: event.target.dataset.content,
     });
-    console.log(event.target.dataset.content);
-    console.log(editorRef.current);
-    console.log(editorRef.current);
     editorRef.current.setContent(event.target.dataset.content);
   };
 
@@ -45,19 +42,13 @@ export default function App() {
 
   //Todo:--------------------------------------
   // Todo: Ajout du titre et de la date
-  // Todo: Meilleur gestion du css
-
-  // !!:----------------------------------------
-  //!!deborde en largeur dans des lignes trop longue Editor (wrap:option)
 
   return (
     <>
       <div className="App-header">
         <Editor
-        
           onInit={(evt, editor) => {
             editorRef.current = editor;
-            console.log(evt);
           }}
           init={{
             height: 500,
@@ -76,9 +67,7 @@ export default function App() {
               "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
           }}
           ref={editorRef}
-          //onEditorChange conseiller dans la doc
           onChange={updateNote}
-          //perte de editor.current.setcontent() lors du retrait de inline
           inline
           initialValue={Newnote.content}
         />
