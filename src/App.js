@@ -33,6 +33,9 @@ export default function App() {
       id: event.target.dataset.id,
       content: event.target.dataset.content,
     });
+    console.log(event.target.dataset.content);
+    console.log(editorRef.current);
+    console.log(editorRef.current);
     editorRef.current.setContent(event.target.dataset.content);
   };
 
@@ -51,19 +54,33 @@ export default function App() {
     <>
       <div className="App-header">
         <Editor
-          onChange={updateNote}
-          ref={editorRef}
-          onInit={(evt, editor) => (editorRef.current = editor)}
-          initialValue={Newnote.content}
-          inline
+        
+          onInit={(evt, editor) => {
+            editorRef.current = editor;
+            console.log(evt);
+          }}
           init={{
-            height: 200,
+            height: 500,
             menubar: false,
-            toolbar_location: "bottom",
+            plugins: [
+              "advlist autolink lists link image charmap print preview anchor",
+              "searchreplace visualblocks code fullscreen",
+              "insertdatetime media table paste code help wordcount",
+            ],
+            toolbar:
+              "undo redo | formatselect | " +
+              "bold italic backcolor | alignleft aligncenter " +
+              "alignright alignjustify | bullist numlist outdent indent | " +
+              "removeformat | help",
             content_style:
               "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
-            placeholder: Newnote.content,
           }}
+          ref={editorRef}
+          //onEditorChange conseiller dans la doc
+          onChange={updateNote}
+          //perte de editor.current.setcontent() lors du retrait de inline
+          inline
+          initialValue={Newnote.content}
         />
         <ListeNote noteArr={arrayTest} changeNote={changeNote} />
       </div>

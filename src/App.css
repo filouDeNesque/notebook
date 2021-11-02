@@ -15,14 +15,13 @@ body {
 .App-header {
   margin: 1em 1em 4em 1em;
   display: flex;
-  align-items: center;
   justify-content: center;
   color: white;
 }
 
 
 .mce-content-body {
-  min-height: 80vh;
-  min-width: 60%;
   margin-right: 2em;
+  width: 60%;
+  padding: 2em;
 }
