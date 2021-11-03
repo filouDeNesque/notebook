@@ -15,7 +15,9 @@ export default function ListeNote(props) {
               data-content={note.content}
               onClick={props.changeNote}
             >
-              <h3>{note.content.slice(4, 18)} ...</h3>
+              <h3>
+                {note.content.replace(/(<([^>]+)>)/gi, "").substring(0, 20)} ...
+              </h3>
             </div>
           );
         })}
