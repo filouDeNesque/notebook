@@ -7,6 +7,7 @@
     overflow: scroll;
 }
 
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .ListeNote::-webkit-scrollbar {
     display: none;
@@ -23,7 +24,7 @@
 .ListeNote .card {
     width: 80px;
     height: 80px;
-    border: 1px solid white;
+    border: 3px solid #b192ff;
     padding: 10px;
     border-radius: 3px;
     cursor: pointer;
@@ -32,10 +33,9 @@
 }
 
 .ListeNote .card:hover {
-    padding: 7px;
-    border: 1px solid white;
-    color: black;
-    background-color: white;
+    padding: 7 px;
+    border: 1 px solid white;
+    background-color: #ffffff1a;
     animation: borderAnimation 1s infinite normal;
 }
 
@@ -72,6 +72,21 @@
     }
 }
 
-.ListeNote .card h3{
+.ListeNote .card h3 {
     pointer-events: none;
+}
+
+
+@media screen and (max-width:600px) {
+
+    .ListeNote {
+        flex-direction: row;
+    }
+
+    .ListeNote .card {
+        min-width: 80px;
+        word-break: normal;
+    }
+
+
 }

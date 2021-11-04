@@ -19,9 +19,24 @@ body {
   color: white;
 }
 
-
 .mce-content-body {
   margin-right: 2em;
   width: 60%;
   padding: 2em;
 }
+
+@media screen and (max-width:600px){
+
+  .App-header{
+    flex-direction: column;
+    min-height: 80vh;
+  }
+
+  .mce-content-body {
+    width: 90%;
+    min-height: 50vh;
+  }
+  
+}
+
+

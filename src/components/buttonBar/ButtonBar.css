@@ -1,5 +1,5 @@
 .ButtonBar button {
-    background: #2a9d8f;
+    background: var(--main-bg-colors);
     border-radius: 11px;
     padding: 15px 35px;
     color: #ffffff;
@@ -10,13 +10,12 @@
 }
 
 .ButtonBar button:hover {
-    background: #a5a58d;
-
+    background: linear-gradient(168deg, #767676, transparent);
 }
+
 
 .ButtonBar {
     display: flex;
     justify-content: space-evenly;
-
     margin-bottom: 1em;
 }
